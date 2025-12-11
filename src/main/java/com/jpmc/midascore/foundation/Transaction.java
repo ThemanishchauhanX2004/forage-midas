@@ -1,48 +1,62 @@
 package com.jpmc.midascore.foundation;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
-    private long senderId;
-    private long recipientId;
-    private float amount;
+
+    private String id;
+    private String type;
+    private double amount;
+    private String timestamp;
+    private String status;
 
     public Transaction() {
     }
 
-    public Transaction(long senderId, long recipientId, float amount) {
-        this.senderId = senderId;
-        this.recipientId = recipientId;
+    public Transaction(String id, String type, double amount, String timestamp, String status) {
+        this.id = id;
+        this.type = type;
         this.amount = amount;
+        this.timestamp = timestamp;
+        this.status = status;
     }
 
-    public long getSenderId() {
-        return senderId;
+    public String getId() {
+        return id;
     }
 
-    public void setSenderId(long senderId) {
-        this.senderId = senderId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public long getRecipientId() {
-        return recipientId;
+    public String getType() {
+        return type;
     }
 
-    public void setRecipientId(long recipientId) {
-        this.recipientId = recipientId;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public float getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(float amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
-    @Override
-    public String toString() {
-        return "Transaction {senderId=" + senderId + ", recipientId=" + recipientId + ", amount=" + amount + "}";
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    // ⭐ This was missing — this caused your Maven error
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

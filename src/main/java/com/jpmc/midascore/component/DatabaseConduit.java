@@ -6,14 +6,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DatabaseConduit {
+
     private final UserRepository userRepository;
 
     public DatabaseConduit(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public void save(UserRecord userRecord) {
-        userRepository.save(userRecord);
+    public void saveUser(UserRecord user) {
+        userRepository.save(user);
     }
-
 }
